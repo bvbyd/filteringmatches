@@ -29,11 +29,6 @@ public class FilteringMatchesApplicationTests {
 	}
 
 	@Test
-	public void testHome() throws Exception {
-		this.mvc.perform(get("/")).andExpect(status().isOk());
-	}
-
-	@Test
 	public void testApiFilter() throws Exception {
 		this.mvc.perform(get("/api/persons")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(24));
 	}
