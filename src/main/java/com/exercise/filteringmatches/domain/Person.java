@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.NaturalId;
 
 @Entity
 public class Person implements Serializable {
 
-	private static final long serialVersionUID = 8326870987519773672L;
+	private static final long serialVersionUID = 2560489512202446511L;
 
 	@Id
 	private Long id;
@@ -40,8 +40,7 @@ public class Person implements Serializable {
 	@Column(nullable = false)
 	private Integer contactsExchanged;
 
-	@Column(nullable = false)
-	private String favourite;
+	private Boolean favourite;
 
 	@Column(nullable = false)
 	private String religion;
@@ -118,20 +117,20 @@ public class Person implements Serializable {
 		this.contactsExchanged = contactsExchanged;
 	}
 
-	public String getFavourite() {
-		return favourite;
-	}
-
-	public void setFavourite(String favourite) {
-		this.favourite = favourite;
-	}
-
 	public String getReligion() {
 		return religion;
 	}
 
 	public void setReligion(String religion) {
 		this.religion = religion;
+	}
+
+	public Boolean getFavourite() {
+		return favourite;
+	}
+
+	public void setFavourite(Boolean favourite) {
+		this.favourite = favourite;
 	}
 
 }
